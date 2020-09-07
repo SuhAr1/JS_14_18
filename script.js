@@ -25,7 +25,6 @@ else if (nowHours >= 0 && nowHours < 5)
 function getTime() {
 	const clock = new Date().toLocaleTimeString();
 	nowTime.textContent = `Текущее время: ${clock}`;
-	console.log(nowTime);
 }
 getTime();
 setInterval(getTime, 1000);
