@@ -48,7 +48,6 @@ function countTimer(deadline) {
 
 	function updateClock() {
 		const timer = getTimerRemaining();
-		let idInterval;
 		if (getTimerRemaining().timeRemaining > 0) {
 			timerHours.textContent = ((timer.hours < 10) ? '0' + timer.hours : timer.hours);
 			timerMinutes.textContent = ((timer.minutes < 10) ? '0' + timer.minutes : timer.minutes);
@@ -61,9 +60,10 @@ function countTimer(deadline) {
 			timerMinutes.textContent = '00';
 			timerSeconds.textContent = '00';
 		}
-		setInterval(updateClock, 1000);
+
 	}
 	updateClock();
+	const idInterval = setInterval(updateClock, 1000);
 }
 
 countTimer('31 december 2020');
